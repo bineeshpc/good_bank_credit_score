@@ -1,0 +1,142 @@
+* Good bank credit score
+
+
+Bank GoodCredit wants to predict cred score for current credit card customers. The cred score will denote a customer’s credit worthiness and help the bank in reducing credit default risk.
+Target variable → Bad_label
+0 – Customer has Good credit history
+1 – Customer has Bad credit history (falls into 30 DPD + bucket)
+
+** PROJECT GOAL:
+Build a model with the data provided
+1. Data exploration insights – what did you find and what decision did you take?
+2. Feature matrix - List of features selected with gain
+3. Model evaluation - Gini and rank ordering
+
+** Database
+Data Set Fields:
+Host: 18.136.56.185
+Port: 3306
+Username : dm_team1 Password: dm_team1123# Database : project_banking
+
+** Info
+30DPD + Bucket
+our benchmark model has gini as 37.9
+
+Decile rank in banking domain
+
+1. Data exploration insights?
+What did you find and what decision did you take?
+
+
+2. Feature matrix
+
+List of features selected with gain
+
+3. Model evaluation
+
+Gini and rank ordering
+
+DPD - Days past due
+
+payment_history_avg_dpd_0_29_bucke
+t
+
+0.045653821
+
+mean count of accounts that is in 0-29 dpd bucket
+throughout the payment history
+
+total_diff_lastpaymt_opened_dt
+
+0.04083407
+
+The total duration between last payment date and
+account opened date of all accounts
+
+min_months_last_30_plus
+
+0.038216344
+
+The smallest number of months passed before first
+30+ dpd appeared for each account.
+
+utilisation_trend
+
+0.037523553
+
+count_enquiry_recency_365
+
+0.036216624
+
+No of enquiry made in past 365 days
+
+Ratio_currbalance_creditlimit
+
+0.035640536
+
+[total cur_bal_amt / total credit limit]
+
+mean_diff_lastpaymt_opened_dt
+
+0.032185579
+
+The average duration between last payment date and
+account opened date of all accounts
+
+mean_diff_open_enquiry_dt
+
+0.031057926
+
+average difference between enquiry dt_opened date
+and enquiry date
+
+payment_history_mean_length
+
+0.029258469
+
+average length of payment_history variable
+
+max_freq_enquiry
+
+0.024501434
+
+most frequent enquiry purpose
+
+count_enquiry_recency_90
+
+0.023796745
+
+No of enquiry made in past 90 days
+
+0.023428297
+
+ratio of secured loan type enquiry purpose to total
+enquiry purpose made
+
+perc_unsecured_others
+
+[total cur_bal_amt / total credit limit] / [mean
+cur_bal_amt / (mean credit limit+ mean_cashlimit)]
+
+
+** feature suggestions
+
+| Feature                             | Explanation                                                                            |
+| payment_history_avg_dpd_0_29_bucket | mean count of accounts that is in 0-29 dpd bucket throughout the payment history       |
+| total_diff_lastpaymt_opened_dt      | The total duration between last payment date and account opened date of all accounts   |
+| min_months_last_30_plus             | The smallest number of months passed before first 30+ dpd appeared for each account.   |
+| utilisation_trend                   |                                                                                        |
+| mean_diff_lastpaymt_opened_dt       | The average duration between last payment date and account opened date of all accounts |
+| payment_history_mean_length         | average length of payment_history variable                                             |
+
+| perc_unsecured_others               | ratio of secured loan type enquiry purpose to total enquiry purpose made  [total cur_bal_amt / total credit limit] / [mean cur_bal_amt / (mean credit limit+ mean_cashlimit)]
+             |
+| Ratio_currbalance_creditlimit       | [total cur_bal_amt / total credit limit]                                               |
+| # of enquiry made in past 365 days  | # of enquiry made in past 365 days                                                     |
+| mean_diff_open_enquiry_dt           | average difference between enquiry dt_opened date and enquiry date                     |
+| max_freq_enquiry                    | most frequent enquiry purpose                                                          |
+| count_enquiry_recency_90            | # of enquiry made in past 90 days                                                      |
+
+
+
+
